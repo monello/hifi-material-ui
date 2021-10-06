@@ -63,7 +63,7 @@ const Header = (props) => {
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <StyledLogo src={logo} alt="Company Logo" />
-            <StyledTabs>
+            <StyledTabs textColor="inherit">
               <StyledTab label="Home" />
               <StyledTab label="Services" />
               <StyledTab label="The Revolution" />
