@@ -19,6 +19,7 @@ import logo from "../../assets/logo.svg";
 // Toolbar Spacer (with theme) - Styling a Vanilla `<div>` element
 const ToolbarSpacer = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
+  marginBottom: "3em", // to compensate for the logo height
 }));
 
 // Styled Logo (with theme)
