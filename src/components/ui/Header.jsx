@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AppBar, Toolbar, useScrollTrigger, Typography } from "@mui/material";
+import { AppBar, Toolbar, useScrollTrigger } from "@mui/material";
 import { styled } from "@mui/material/styles";
+
+import logo from "../../assets/logo.svg";
 
 /**
  * ## STYLED COMPONENTS
@@ -41,7 +43,7 @@ const Header = (props) => {
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar>
-            <Typography variant="h3">Arc Developement</Typography>
+            <img src={logo} alt="Company Logo" />
           </Toolbar>
         </AppBar>
       </ElevationScroll>
