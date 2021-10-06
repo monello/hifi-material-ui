@@ -77,7 +77,11 @@ const Header = (props) => {
               <StyledTab label="About Us" />
               <StyledTab label="Contact Us" />
             </StyledTabs>
-            <Button variant="contained" color="primary">
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ borderRadius: "50px" }}
+            >
               Free Estimate
             </Button>
           </Toolbar>
