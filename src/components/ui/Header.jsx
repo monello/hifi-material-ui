@@ -21,6 +21,11 @@ const ToolbarSpacer = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
+// Styled Logo (with theme)
+const StyledLogo = styled("img")(({ theme }) => ({
+  height: "7em",
+}));
+
 function ElevationScroll(props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -43,7 +48,7 @@ const Header = (props) => {
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar disableGutters>
-            <img src={logo} alt="Company Logo" />
+            <StyledLogo src={logo} alt="Company Logo" />
           </Toolbar>
         </AppBar>
       </ElevationScroll>
