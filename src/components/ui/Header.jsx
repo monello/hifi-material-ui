@@ -1,6 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AppBar, Toolbar, useScrollTrigger, Tabs, Tab } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  useScrollTrigger,
+  Tabs,
+  Tab,
+  Button,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
@@ -70,6 +77,9 @@ const Header = (props) => {
               <StyledTab label="About Us" />
               <StyledTab label="Contact Us" />
             </StyledTabs>
+            <Button variant="contained" color="primary">
+              Free Estimate
+            </Button>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
