@@ -11,6 +11,7 @@ import {
 import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
+import theme from "./Theme";
 
 /**
  * ## STYLED COMPONENTS
@@ -79,8 +80,13 @@ const Header = (props) => {
             </StyledTabs>
             <Button
               variant="contained"
-              color="primary"
-              sx={{ borderRadius: "50px" }}
+              color="secondary"
+              sx={{
+                ...theme.typography.estimate,
+                borderRadius: "50px",
+                marginLeft: "50px",
+                marginRight: "25px",
+              }}
             >
               Free Estimate
             </Button>
