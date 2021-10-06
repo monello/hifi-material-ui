@@ -27,6 +27,19 @@ const StyledLogo = styled("img")(({ theme }) => ({
   height: "7em",
 }));
 
+// Styled Tabs (without theme)
+const StyledTabs = styled(Tabs)({
+  marginLeft: "auto",
+});
+
+// Styled Tab (with theme))
+const StyledTab = styled(Tab)(({ theme }) => ({
+  ...theme.typography.tab,
+  minWidth: 10,
+  marginLeft: "25px",
+}));
+
+/* FUNCTIONS */
 function ElevationScroll(props) {
   const { children } = props;
   const trigger = useScrollTrigger({
@@ -50,13 +63,13 @@ const Header = (props) => {
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <StyledLogo src={logo} alt="Company Logo" />
-            <Tabs>
-              <Tab label="Home" />
-              <Tab label="Services" />
-              <Tab label="The Revolution" />
-              <Tab label="About Us" />
-              <Tab label="Contact Us" />
-            </Tabs>
+            <StyledTabs>
+              <StyledTab label="Home" />
+              <StyledTab label="Services" />
+              <StyledTab label="The Revolution" />
+              <StyledTab label="About Us" />
+              <StyledTab label="Contact Us" />
+            </StyledTabs>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
