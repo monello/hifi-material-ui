@@ -42,7 +42,7 @@ const Header = (props) => {
     <>
       <ElevationScroll>
         <AppBar position="fixed">
-          <Toolbar>
+          <Toolbar disableGutters>
             <img src={logo} alt="Company Logo" />
           </Toolbar>
         </AppBar>
