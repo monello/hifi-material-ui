@@ -8,7 +8,7 @@ import {
   Tab,
   Button,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { styled, alpha } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
 import theme from "./Theme";
@@ -71,7 +71,12 @@ const Header = (props) => {
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <StyledLogo src={logo} alt="Company Logo" />
-            <StyledTabs textColor="inherit">
+            <StyledTabs
+              value={0}
+              //   indicatorColor="secondary"
+              TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
+              textColor="inherit"
+            >
               <StyledTab label="Home" />
               <StyledTab label="Services" />
               <StyledTab label="The Revolution" />
