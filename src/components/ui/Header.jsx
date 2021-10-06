@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AppBar, Toolbar, useScrollTrigger } from "@mui/material";
+import { AppBar, Toolbar, useScrollTrigger, Tabs, Tab } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
@@ -50,6 +50,13 @@ const Header = (props) => {
         <AppBar position="fixed">
           <Toolbar disableGutters>
             <StyledLogo src={logo} alt="Company Logo" />
+            <Tabs>
+              <Tab label="Home" />
+              <Tab label="Services" />
+              <Tab label="The Revolution" />
+              <Tab label="About Us" />
+              <Tab label="Contact Us" />
+            </Tabs>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
