@@ -1,13 +1,18 @@
 import Header from "./ui/Header";
-import { ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { ThemeProvider } from '@mui/material/styles';
 import theme from "./ui/Theme";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Header />
-      Hello World!
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route extact path="/" component={() => <div>Home Page</div>}></Route>
+        </Switch>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
