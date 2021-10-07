@@ -99,7 +99,7 @@ const Header = (props) => {
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar disableGutters>
-            <Button component={Link} to="/">
+            <Button component={Link} to="/" sx={{ padding: 0 }}>
               <StyledLogo src={logo} alt="Company Logo" />
             </Button>
             <StyledTabs
