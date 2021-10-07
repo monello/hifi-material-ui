@@ -166,13 +166,25 @@ const Header = (props) => {
               onClose={handleMenuClose}
               MenuListProps={{ onMouseLeave: handleMenuClose }}
             >
-              <MenuItem onCLick={handleMenuClose}>
+              <MenuItem
+                onCLick={handleMenuClose}
+                component={Link}
+                to="/customsoftware"
+              >
                 Custom Software Development
               </MenuItem>
-              <MenuItem onCLick={handleMenuClose}>
+              <MenuItem
+                onCLick={handleMenuClose}
+                component={Link}
+                to="/mobileapps"
+              >
                 Mobile Apps Development
               </MenuItem>
-              <MenuItem onCLick={handleMenuClose}>
+              <MenuItem
+                onCLick={handleMenuClose}
+                component={Link}
+                to="/websites"
+              >
                 Websites Development
               </MenuItem>
             </Menu>
