@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Couse Commit Log
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo is a step-by-step commit log of all the changes the Lectuter makes in the Udemy course [Implement High Fedility Designs with Material-UI and ReactJS](https://www.udemy.com/share/102FSw3@HhMnIjr0GPsnedp8ZCgMxFK_v8akZ6RwCgLIR_SAkDe8EAqqztv2J1CFlSYackny/)
 
-## Available Scripts
+The reason I did this is mostly so I can easily reference the exact code changes I made at each increment.
 
-In the project directory, you can run:
+Another reason and probably even more important reason, is that the course is done with the previous version of Material-UI (MUI 4 / @material-ui) and I wanted to learn the most current version (MUI 5 / @mui).
 
-### `yarn start`
+So I can then still do the course, adapt everyting to MUI 5 and then have my own Reference material in a detailed, highly incremental commit log.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## The commit log and navigating through it
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I do way more commits than there are videos in the course. The videos obviously handle a full topic at a time, but many small and working steps are covered in each video. I try to do a commit with detailed comments below each commit to describe the steps and add relevant resources where applicable.
 
-### `yarn test`
+I took great effort to add these comment, so scroll to the bottom of each commit to see those and from there I also added handy (and rudementary) navigation links to navigate from any commit back to the previous or ahead to the next commit.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The Nav-links just make it much easier to move between commits, in-order, instead of going back to the commit log and trying to figure out what the last commit was I read.
 
-### `yarn build`
+If there is a better way to navigate between commits, please ... please let me know so I can spend that time a bit better 😄
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you dicovered this commit log by chance I hope it helps, as it goes along with that course. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The first commit is the last commit in the log
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here is a handy link to the [First Commit](https://github.com/monello/hifi-material-ui/commit/95af34f1197892e8516804fbfafb607d950e61fd), that is obviously the last commit on the last page of the log so a bit painful to get to otherwise
