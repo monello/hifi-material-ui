@@ -19,3 +19,7 @@ The Nav-links just make it much easier to move between commits, in-order, instea
 If there is a better way to navigate between commits, please ... please let me know so I can spend that time a bit better 😄
 
 If you dicovered this commit log by chance I hope it helps, as it goes along with that course. 
+
+## The first commit is the last commit in the log
+
+Here is a handy link to the [First Commit](https://github.com/monello/hifi-material-ui/commit/95af34f1197892e8516804fbfafb607d950e61fd), that is obviously the last commit on the last page of the log so a bit painful to get to otherwise
