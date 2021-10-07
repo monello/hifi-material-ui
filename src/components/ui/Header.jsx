@@ -8,6 +8,8 @@ import {
   Tabs,
   Tab,
   Button,
+  Menu,
+  MenuItem,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -70,9 +72,21 @@ ElevationScroll.propTypes = {
 
 const Header = (props) => {
   const [activeTab, setActiveTab] = useState(0);
+  const [menuAnchorEl, setMenuAnchorEl] = useState(null);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
+  };
+
+  const handleMenuCLick = (event) => {
+    setMenuAnchorEl(event.currentTarget);
+    setMenuIsOpen(true);
+  };
+
+  const handleMenuClose = (event) => {
+    setMenuAnchorEl(null);
+    setMenuIsOpen(false);
   };
 
   useEffect(() => {
@@ -117,7 +131,14 @@ const Header = (props) => {
               textColor="inherit"
             >
               <StyledTab component={Link} to="/" label="Home" />
-              <StyledTab component={Link} to="/services" label="Services" />
+              <StyledTab
+                component={Link}
+                to="/services"
+                label="Services"
+                aria-owns={menuAnchorEl ? "simple-menu" : undefined}
+                aria-haspopup={menuAnchorEl ? "true" : undefined}
+                onClick={(event) => handleMenuCLick(event)}
+              />
               <StyledTab
                 component={Link}
                 to="/revolution"
@@ -138,6 +159,22 @@ const Header = (props) => {
             >
               Free Estimate
             </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={menuAnchorEl}
+              open={menuIsOpen}
+              onClose={handleMenuClose}
+            >
+              <MenuItem onCLick={handleMenuClose}>
+                Custom Software Development
+              </MenuItem>
+              <MenuItem onCLick={handleMenuClose}>
+                Mobile Apps Development
+              </MenuItem>
+              <MenuItem onCLick={handleMenuClose}>
+                Websites Development
+              </MenuItem>
+            </Menu>
           </Toolbar>
         </AppBar>
       </ElevationScroll>
