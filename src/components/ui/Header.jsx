@@ -164,6 +164,7 @@ const Header = (props) => {
               anchorEl={menuAnchorEl}
               open={menuIsOpen}
               onClose={handleMenuClose}
+              MenuListProps={{ onMouseLeave: handleMenuClose }}
             >
               <MenuItem onCLick={handleMenuClose}>
                 Custom Software Development
