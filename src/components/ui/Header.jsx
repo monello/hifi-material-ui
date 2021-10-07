@@ -165,6 +165,14 @@ const Header = (props) => {
               open={menuIsOpen}
               onClose={handleMenuClose}
               MenuListProps={{ onMouseLeave: handleMenuClose }}
+              PaperProps={{
+                sx: {
+                  backgroundColor: theme.palette.common.blue,
+                  color: theme.palette.primary.contrastText,
+                  borderRadius: 0,
+                },
+              }}
+              elevation={0}
             >
               <MenuItem
                 onClick={() => {
@@ -173,6 +181,11 @@ const Header = (props) => {
                 }}
                 component={Link}
                 to="/customsoftware"
+                sx={{
+                  ...theme.typography.tab,
+                  opacity: 0.7,
+                  "&:hover": { opacity: 1 },
+                }}
               >
                 Custom Software Development
               </MenuItem>
@@ -183,6 +196,11 @@ const Header = (props) => {
                 }}
                 component={Link}
                 to="/mobileapps"
+                sx={{
+                  ...theme.typography.tab,
+                  opacity: 0.7,
+                  "&:hover": { opacity: 1 },
+                }}
               >
                 Mobile Apps Development
               </MenuItem>
@@ -193,6 +211,11 @@ const Header = (props) => {
                 }}
                 component={Link}
                 to="/websites"
+                sx={{
+                  ...theme.typography.tab,
+                  opacity: 0.7,
+                  "&:hover": { opacity: 1 },
+                }}
               >
                 Websites Development
               </MenuItem>
