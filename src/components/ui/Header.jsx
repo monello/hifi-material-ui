@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -65,6 +65,11 @@ ElevationScroll.propTypes = {
 };
 
 const Header = (props) => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
   return (
     <>
       <ElevationScroll>
@@ -72,7 +77,8 @@ const Header = (props) => {
           <Toolbar disableGutters>
             <StyledLogo src={logo} alt="Company Logo" />
             <StyledTabs
-              value={0}
+              value={activeTab}
+              onChange={handleTabChange}
               //   indicatorColor="secondary"
               TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
               textColor="inherit"
