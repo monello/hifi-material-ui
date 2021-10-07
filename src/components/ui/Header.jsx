@@ -33,7 +33,7 @@ const ToolbarSpacer = styled("div")(({ theme }) => ({
 
 // Styled Logo (with theme)
 const StyledLogo = styled("img")(({ theme }) => ({
-  height: "7em",
+  height: "8em",
 }));
 
 // Styled Tabs (without theme)
