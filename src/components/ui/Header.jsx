@@ -99,7 +99,9 @@ const Header = (props) => {
       <ElevationScroll>
         <AppBar position="fixed">
           <Toolbar disableGutters>
-            <StyledLogo src={logo} alt="Company Logo" />
+            <Button component={Link} to="/">
+              <StyledLogo src={logo} alt="Company Logo" />
+            </Button>
             <StyledTabs
               value={activeTab}
               onChange={handleTabChange}
