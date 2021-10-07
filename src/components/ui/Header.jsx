@@ -88,10 +88,6 @@ const Header = (props) => {
     } else if (window.location.pathname === "/contact" && activeTab !== 4) {
       setActiveTab(4);
     }
-    // Not sure why the '/estimate' page is added here as it's not a Tab in the Tabs component
-    else if (window.location.pathname === "/services" && activeTab !== 5) {
-      setActiveTab(5);
-    }
   }, [activeTab]);
 
   return (
