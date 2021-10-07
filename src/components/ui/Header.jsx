@@ -8,7 +8,7 @@ import {
   Tab,
   Button,
 } from "@mui/material";
-import { styled, alpha } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
 import theme from "./Theme";
