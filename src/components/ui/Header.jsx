@@ -137,7 +137,7 @@ const Header = (props) => {
                 label="Services"
                 aria-owns={menuAnchorEl ? "simple-menu" : undefined}
                 aria-haspopup={menuAnchorEl ? "true" : undefined}
-                onClick={(event) => handleMenuCLick(event)}
+                onMouseOver={(event) => handleMenuCLick(event)}
               />
               <StyledTab
                 component={Link}
