@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -83,11 +84,15 @@ const Header = (props) => {
               TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
               textColor="inherit"
             >
-              <StyledTab label="Home" />
-              <StyledTab label="Services" />
-              <StyledTab label="The Revolution" />
-              <StyledTab label="About Us" />
-              <StyledTab label="Contact Us" />
+              <StyledTab component={Link} to="/" label="Home" />
+              <StyledTab component={Link} to="/services" label="Services" />
+              <StyledTab
+                component={Link}
+                to="/revolution"
+                label="The Revolution"
+              />
+              <StyledTab component={Link} to="/about" label="About Us" />
+              <StyledTab component={Link} to="/contact" label="Contact Us" />
             </StyledTabs>
             <Button
               variant="contained"
