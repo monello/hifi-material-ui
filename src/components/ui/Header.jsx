@@ -98,6 +98,7 @@ const Header = (props) => {
             <Button
               component={Link}
               to="/"
+              disableRipple
               sx={{ padding: 0 }}
               onClick={() => {
                 setActiveTab(0);
