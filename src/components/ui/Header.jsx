@@ -89,6 +89,12 @@ const Header = (props) => {
     setMenuIsOpen(false);
   };
 
+  const menuOptions = [
+    { name: "Custom Software Developement", link: "/customsoftware" },
+    { name: "Mobile Apps Development", link: "/mobileapps" },
+    { name: "Websites Development", link: "/websites" },
+  ];
+
   useEffect(() => {
     // Instructor's comment: If we are trying to access just the '/' Home-page route and we have have not already set the correct value (activeTab)
     // then we we will call setActiveTab() to set with '0' to set the correct active Tab
@@ -174,51 +180,24 @@ const Header = (props) => {
               }}
               elevation={0}
             >
-              <MenuItem
-                onClick={() => {
-                  handleMenuClose();
-                  setActiveTab(1);
-                }}
-                component={Link}
-                to="/customsoftware"
-                sx={{
-                  ...theme.typography.tab,
-                  opacity: 0.7,
-                  "&:hover": { opacity: 1 },
-                }}
-              >
-                Custom Software Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  handleMenuClose();
-                  setActiveTab(1);
-                }}
-                component={Link}
-                to="/mobileapps"
-                sx={{
-                  ...theme.typography.tab,
-                  opacity: 0.7,
-                  "&:hover": { opacity: 1 },
-                }}
-              >
-                Mobile Apps Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  handleMenuClose();
-                  setActiveTab(1);
-                }}
-                component={Link}
-                to="/websites"
-                sx={{
-                  ...theme.typography.tab,
-                  opacity: 0.7,
-                  "&:hover": { opacity: 1 },
-                }}
-              >
-                Websites Development
-              </MenuItem>
+              {menuOptions.map((menuItem, index) => (
+                <MenuItem
+                  key={index}
+                  onClick={(event) => {
+                    handleMenuClose();
+                    setActiveTab(1);
+                  }}
+                  component={Link}
+                  to={menuItem.link}
+                  sx={{
+                    ...theme.typography.tab,
+                    opacity: 0.7,
+                    "&:hover": { opacity: 1 },
+                  }}
+                >
+                  {menuItem.name}
+                </MenuItem>
+              ))}
             </Menu>
           </Toolbar>
         </AppBar>
