@@ -159,6 +159,82 @@ const Header = (props) => {
     }
   }, [activeTab]);
 
+  const tabs = (
+    <>
+      <StyledTabs
+        value={activeTab}
+        onChange={handleTabChange}
+        //   indicatorColor="secondary"
+        TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
+        textColor="inherit"
+      >
+        <StyledTab component={Link} to="/" label="Home" />
+        <StyledTab
+          component={Link}
+          to="/services"
+          label="Services"
+          aria-owns={menuAnchorEl ? "simple-menu" : undefined}
+          aria-haspopup={menuAnchorEl ? "true" : undefined}
+          onMouseOver={(event) => handleMenuCLick(event)}
+        />
+        <StyledTab component={Link} to="/revolution" label="The Revolution" />
+        <StyledTab component={Link} to="/about" label="About Us" />
+        <StyledTab component={Link} to="/contact" label="Contact Us" />
+      </StyledTabs>
+      <Button
+        variant="contained"
+        color="secondary"
+        sx={{
+          ...theme.typography.estimate,
+          borderRadius: "50px",
+          marginLeft: "50px",
+          marginRight: "25px",
+        }}
+      >
+        Free Estimate
+      </Button>
+      <Menu
+        id="simple-menu"
+        anchorEl={menuAnchorEl}
+        open={menuIsOpen}
+        onClose={handleMenuClose}
+        MenuListProps={{ onMouseLeave: handleMenuClose }}
+        PaperProps={{
+          sx: {
+            backgroundColor: theme.palette.common.blue,
+            color: theme.palette.primary.contrastText,
+            borderRadius: 0,
+          },
+        }}
+        elevation={0}
+      >
+        {menuOptions.map((menuItem, index) => (
+          <MenuItem
+            key={index}
+            onClick={(event) => {
+              handleMenuItemClick(event, index);
+              handleMenuClose();
+              setActiveTab(1);
+            }}
+            selected={index === selectedIndex && activeTab === 1}
+            component={Link}
+            to={menuItem.link}
+            sx={{
+              ...theme.typography.tab,
+              opacity: 0.7,
+              "&:hover": { opacity: 1 },
+              "&.Mui-selected": {
+                backgroundColor: theme.palette.primary.dark,
+              },
+            }}
+          >
+            {menuItem.name}
+          </MenuItem>
+        ))}
+      </Menu>
+    </>
+  );
+
   return (
     <>
       <ElevationScroll>
@@ -175,81 +251,7 @@ const Header = (props) => {
             >
               <StyledLogo src={logo} alt="Company Logo" />
             </Button>
-            <StyledTabs
-              value={activeTab}
-              onChange={handleTabChange}
-              //   indicatorColor="secondary"
-              TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
-              textColor="inherit"
-            >
-              <StyledTab component={Link} to="/" label="Home" />
-              <StyledTab
-                component={Link}
-                to="/services"
-                label="Services"
-                aria-owns={menuAnchorEl ? "simple-menu" : undefined}
-                aria-haspopup={menuAnchorEl ? "true" : undefined}
-                onMouseOver={(event) => handleMenuCLick(event)}
-              />
-              <StyledTab
-                component={Link}
-                to="/revolution"
-                label="The Revolution"
-              />
-              <StyledTab component={Link} to="/about" label="About Us" />
-              <StyledTab component={Link} to="/contact" label="Contact Us" />
-            </StyledTabs>
-            <Button
-              variant="contained"
-              color="secondary"
-              sx={{
-                ...theme.typography.estimate,
-                borderRadius: "50px",
-                marginLeft: "50px",
-                marginRight: "25px",
-              }}
-            >
-              Free Estimate
-            </Button>
-            <Menu
-              id="simple-menu"
-              anchorEl={menuAnchorEl}
-              open={menuIsOpen}
-              onClose={handleMenuClose}
-              MenuListProps={{ onMouseLeave: handleMenuClose }}
-              PaperProps={{
-                sx: {
-                  backgroundColor: theme.palette.common.blue,
-                  color: theme.palette.primary.contrastText,
-                  borderRadius: 0,
-                },
-              }}
-              elevation={0}
-            >
-              {menuOptions.map((menuItem, index) => (
-                <MenuItem
-                  key={index}
-                  onClick={(event) => {
-                    handleMenuItemClick(event, index);
-                    handleMenuClose();
-                    setActiveTab(1);
-                  }}
-                  selected={index === selectedIndex && activeTab === 1}
-                  component={Link}
-                  to={menuItem.link}
-                  sx={{
-                    ...theme.typography.tab,
-                    opacity: 0.7,
-                    "&:hover": { opacity: 1 },
-                    "&.Mui-selected": {
-                      backgroundColor: theme.palette.primary.dark,
-                    },
-                  }}
-                >
-                  {menuItem.name}
-                </MenuItem>
-              ))}
-            </Menu>
+            {tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
