@@ -77,7 +77,7 @@ const Header = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const theme = useTheme();
-  const mdBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
+  const mdBreakpoint = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
