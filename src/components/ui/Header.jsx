@@ -31,6 +31,12 @@ import logo from "../../assets/logo.svg";
 const ToolbarSpacer = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   marginBottom: "3em", // to compensate for the logo height
+  [theme.breakpoints.down("lg")]: {
+    marginBottom: "2em",
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "1em",
+  },
 }));
 
 // Styled Logo (with theme)
