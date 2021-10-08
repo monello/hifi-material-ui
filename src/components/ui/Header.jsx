@@ -149,6 +149,11 @@ const Header = (props) => {
           setActiveTab(4);
         }
         break;
+      case "/estimate":
+        if (activeTab !== 5) {
+          setActiveTab(5);
+        }
+        break;
       default:
         break;
     }
