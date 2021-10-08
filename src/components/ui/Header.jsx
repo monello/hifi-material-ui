@@ -105,18 +105,34 @@ const Header = (props) => {
   useEffect(() => {
     // Instructor's comment: If we are trying to access just the '/' Home-page route and we have have not already set the correct value (activeTab)
     // then we we will call setActiveTab() to set with '0' to set the correct active Tab
-    if (window.location.pathname === "/" && activeTab !== 0) {
-      setActiveTab(0);
-    }
-    // do the same for all the other pages (seems like there should be a better way, but I'm sticking to the course material for now)
-    else if (window.location.pathname === "/services" && activeTab !== 1) {
-      setActiveTab(1);
-    } else if (window.location.pathname === "/revolution" && activeTab !== 2) {
-      setActiveTab(2);
-    } else if (window.location.pathname === "/about" && activeTab !== 3) {
-      setActiveTab(3);
-    } else if (window.location.pathname === "/contact" && activeTab !== 4) {
-      setActiveTab(4);
+    switch (window.location.pathname) {
+      case "/":
+        if (activeTab !== 0) {
+          setActiveTab(0);
+        }
+        break;
+      case "/services":
+        if (activeTab !== 1) {
+          setActiveTab(1);
+        }
+        break;
+      case "/revolution":
+        if (activeTab !== 2) {
+          setActiveTab(2);
+        }
+        break;
+      case "/about":
+        if (activeTab !== 3) {
+          setActiveTab(3);
+        }
+        break;
+      case "/contact":
+        if (activeTab !== 4) {
+          setActiveTab(4);
+        }
+        break;
+      default:
+        break;
     }
   }, [activeTab]);
 
