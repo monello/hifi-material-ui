@@ -39,6 +39,9 @@ const StyledLogo = styled("img")(({ theme }) => ({
   "&:hover": {
     backgroundColor: "transparent",
   },
+  [theme.breakpoints.down("lg")]: {
+    height: "7em",
+  },
 }));
 
 // Styled Tabs (without theme)
