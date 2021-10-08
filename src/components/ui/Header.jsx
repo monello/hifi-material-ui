@@ -116,6 +116,24 @@ const Header = (props) => {
           setActiveTab(1);
         }
         break;
+      case "/customsoftware":
+        if (activeTab !== 1) {
+          setActiveTab(1);
+          setSelectedIndex(0);
+        }
+        break;
+      case "/mobileapps":
+        if (activeTab !== 1) {
+          setActiveTab(1);
+          setSelectedIndex(1);
+        }
+        break;
+      case "/websites":
+        if (activeTab !== 1) {
+          setActiveTab(1);
+          setSelectedIndex(2);
+        }
+        break;
       case "/revolution":
         if (activeTab !== 2) {
           setActiveTab(2);
