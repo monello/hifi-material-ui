@@ -50,7 +50,7 @@ const StyledTabs = styled(Tabs)({
 const StyledTab = styled(Tab)(({ theme }) => ({
   ...theme.typography.tab,
   minWidth: 10,
-  marginLeft: "25px",
+  marginLeft: "10px",
 }));
 
 /* FUNCTIONS */
@@ -190,7 +190,7 @@ const Header = (props) => {
         sx={{
           ...theme.typography.estimate,
           borderRadius: "50px",
-          marginLeft: "50px",
+          marginLeft: "20px",
           marginRight: "25px",
         }}
       >
