@@ -10,11 +10,11 @@ import {
   Button,
   Menu,
   MenuItem,
+  useMediaQuery,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 
 import logo from "../../assets/logo.svg";
-import theme from "./Theme";
 
 /**
  * ## STYLED COMPONENTS
@@ -75,6 +75,9 @@ const Header = (props) => {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const theme = useTheme();
+  const mdBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -251,7 +254,7 @@ const Header = (props) => {
             >
               <StyledLogo src={logo} alt="Company Logo" />
             </Button>
-            {tabs}
+            {mdBreakpoint ? null : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
