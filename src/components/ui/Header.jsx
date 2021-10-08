@@ -74,6 +74,7 @@ const Header = (props) => {
   const [activeTab, setActiveTab] = useState(0);
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -87,6 +88,12 @@ const Header = (props) => {
   const handleMenuClose = (event) => {
     setMenuAnchorEl(null);
     setMenuIsOpen(false);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    setMenuAnchorEl(null);
+    setMenuIsOpen(false);
+    setSelectedIndex(index);
   };
 
   const menuOptions = [
@@ -184,15 +191,20 @@ const Header = (props) => {
                 <MenuItem
                   key={index}
                   onClick={(event) => {
+                    handleMenuItemClick(event, index);
                     handleMenuClose();
                     setActiveTab(1);
                   }}
+                  selected={index === selectedIndex && activeTab === 1}
                   component={Link}
                   to={menuItem.link}
                   sx={{
                     ...theme.typography.tab,
                     opacity: 0.7,
                     "&:hover": { opacity: 1 },
+                    "&.Mui-selected": {
+                      backgroundColor: theme.palette.primary.dark,
+                    },
                   }}
                 >
                   {menuItem.name}
