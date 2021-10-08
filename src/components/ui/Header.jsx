@@ -42,6 +42,9 @@ const StyledLogo = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {
     height: "7em",
   },
+  [theme.breakpoints.down("sm")]: {
+    height: "5.5em",
+  },
 }));
 
 // Styled Tabs (without theme)
