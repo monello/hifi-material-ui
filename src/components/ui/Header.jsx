@@ -11,8 +11,13 @@ import {
   Menu,
   MenuItem,
   useMediaQuery,
+  SwipeableDrawer,
 } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
+
+import { IconButton } from "@mui/material";
+
+import { Menu as MenuIcon } from "@mui/icons-material";
 
 import logo from "../../assets/logo.svg";
 
@@ -87,8 +92,13 @@ const Header = (props) => {
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const theme = useTheme();
+  const iOS =
+    typeof navigator !== "undefined" &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent);
+
   const mdBreakpoint = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleTabChange = (event, newValue) => {
@@ -250,6 +260,22 @@ const Header = (props) => {
     </>
   );
 
+  const drawer = (
+    <>
+      <SwipeableDrawer
+        disableBackdropTransition={!iOS}
+        disableDiscovery={iOS}
+        open={drawerIsOpen}
+        onClose={() => setDrawerIsOpen(false)}
+        onOpen={() => setDrawerIsOpen(true)}
+      >
+        Example Drawer
+      </SwipeableDrawer>
+      <IconButton onClick={() => setDrawerIsOpen(!drawerIsOpen)}>
+        <MenuIcon />
+      </IconButton>
+    </>
+  );
   return (
     <>
       <ElevationScroll>
@@ -266,7 +292,7 @@ const Header = (props) => {
             >
               <StyledLogo src={logo} alt="Company Logo" />
             </Button>
-            {mdBreakpoint ? null : tabs}
+            {mdBreakpoint ? drawer : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
