@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "./ui/Header";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
