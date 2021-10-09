@@ -99,7 +99,7 @@ const Header = (props) => {
     typeof navigator !== "undefined" &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-  const mdBreakpoint = useMediaQuery(theme.breakpoints.down("lg"));
+  const lgBreakpoint = useMediaQuery(theme.breakpoints.down("lg"));
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
@@ -292,7 +292,7 @@ const Header = (props) => {
             >
               <StyledLogo src={logo} alt="Company Logo" />
             </Button>
-            {mdBreakpoint ? drawer : tabs}
+            {lgBreakpoint ? drawer : tabs}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
