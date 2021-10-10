@@ -23,7 +23,12 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import logo from "../../assets/logo.svg";
 
+import theme from "./Theme";
+
 const useStyles = makeStyles({
+  drawer: {
+    backgroundColor: theme.palette.common.blue + " !important",
+  },
   drawerIconContainer: {
     marginLeft: "auto !important",
     "&:hover": {
@@ -286,6 +291,13 @@ const Header = (props) => {
         open={drawerIsOpen}
         onClose={() => setDrawerIsOpen(false)}
         onOpen={() => setDrawerIsOpen(true)}
+        // classes={{ paper: classes.drawer }}
+        PaperProps={{
+          sx: {
+            backgroundColor: theme.palette.common.blue,
+            color: theme.palette.primary.contrastText,
+          },
+        }}
       >
         <List disablePadding>
           <ListItem
