@@ -289,19 +289,19 @@ const Header = (props) => {
       >
         <List>
           <ListItem component={Link} to="/">
-            <ListItemText>Home</ListItemText>
+            <ListItemText disableTypography>Home</ListItemText>
           </ListItem>
           <ListItem component={Link} to="/services">
-            <ListItemText>Services</ListItemText>
+            <ListItemText disableTypography>Services</ListItemText>
           </ListItem>
           <ListItem component={Link} to="/revolution">
-            <ListItemText>The Revolution</ListItemText>
+            <ListItemText disableTypography>The Revolution</ListItemText>
           </ListItem>
           <ListItem component={Link} to="/contact">
-            <ListItemText>Contact</ListItemText>
+            <ListItemText disableTypography>Contact</ListItemText>
           </ListItem>
           <ListItem component={Link} to="/about">
-            <ListItemText>About</ListItemText>
+            <ListItemText disableTypography>About</ListItemText>
           </ListItem>
         </List>
       </SwipeableDrawer>
