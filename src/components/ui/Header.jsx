@@ -33,6 +33,11 @@ const useStyles = makeStyles({
     ...theme.typography.tab,
     color: "white",
     fontWeight: "400 !important",
+    opacity: 0.7,
+  },
+  drawerItemSelected: {
+    opacity: 1,
+    fontWeight: 700,
   },
   drawerItemEstimate: {
     backgroundColor: theme.palette.common.orange + " !important",
@@ -161,7 +166,19 @@ const Header = (props) => {
     { name: "Websites Development", link: "/websites" },
   ];
 
+  const routes = [
+    { name: "Home", link: "/" },
+    { name: "Services", link: "/services" },
+    { name: "The Revolution", link: "/revolution" },
+    { name: "About Us", link: "/about" },
+    { name: "Contact Us", link: "/contact" },
+  ];
+
   useEffect(() => {
+    console.log([...menuOptions, ...routes]);
+    // [...menuOptions, ...routes].forEach(route => {
+
+    // });
     // Instructor's comment: If we are trying to access just the '/' Home-page route and we have have not already set the correct value (activeTab)
     // then we we will call setActiveTab() to set with '0' to set the correct active Tab
     switch (window.location.pathname) {
@@ -216,6 +233,7 @@ const Header = (props) => {
       default:
         break;
     }
+    console.log("ACTIVE TAB:", activeTab);
   }, [activeTab]);
 
   const tabs = (
@@ -321,7 +339,14 @@ const Header = (props) => {
             to="/"
             selected={activeTab === 0}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
+            <ListItemText
+              className={
+                activeTab === 0
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
               Home
             </ListItemText>
           </ListItem>
@@ -336,7 +361,14 @@ const Header = (props) => {
             to="/services"
             selected={activeTab === 1}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
+            <ListItemText
+              className={
+                activeTab === 1
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
               Services
             </ListItemText>
           </ListItem>
@@ -351,7 +383,14 @@ const Header = (props) => {
             to="/revolution"
             selected={activeTab === 2}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
+            <ListItemText
+              className={
+                activeTab === 2
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
               The Revolution
             </ListItemText>
           </ListItem>
@@ -363,11 +402,18 @@ const Header = (props) => {
             divider
             button
             component={Link}
-            to="/contact"
+            to="/about"
             selected={activeTab === 3}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
-              Contact
+            <ListItemText
+              className={
+                activeTab === 3
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
+              About
             </ListItemText>
           </ListItem>
           <ListItem
@@ -378,11 +424,18 @@ const Header = (props) => {
             divider
             button
             component={Link}
-            to="/about"
+            to="/contact"
             selected={activeTab === 4}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
-              About
+            <ListItemText
+              className={
+                activeTab === 4
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
+              disableTypography
+            >
+              Contact
             </ListItemText>
           </ListItem>
           <ListItem
@@ -398,7 +451,11 @@ const Header = (props) => {
             className={classes.drawerItemEstimate}
           >
             <ListItemText
-              className={classes.drawerItem}
+              className={
+                activeTab === 5
+                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                  : classes.drawerItem
+              }
               sx={{
                 ...theme.typography.estimate,
                 color: theme.palette.common.black,
