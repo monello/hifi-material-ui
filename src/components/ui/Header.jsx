@@ -33,6 +33,9 @@ const useStyles = makeStyles({
     ...theme.typography.tab,
     color: "white",
   },
+  drawerItemEstimate: {
+    backgroundColor: theme.palette.common.orange,
+  },
   drawerIconContainer: {
     marginLeft: "auto !important",
     "&:hover": {
@@ -365,7 +368,10 @@ const Header = (props) => {
             component={Link}
             to="/estimate"
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
+            <ListItemText
+              className={[classes.drawerItem, classes.drawerItemEstimate]}
+              disableTypography
+            >
               Free Estimate
             </ListItemText>
           </ListItem>
