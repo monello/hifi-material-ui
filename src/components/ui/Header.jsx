@@ -27,6 +27,10 @@ const useStyles = makeStyles({
       backgroundColor: "transparent !important",
     },
   },
+  drawerIcon: {
+    height: "50px !important",
+    width: "50px !important",
+  },
 });
 
 /**
@@ -287,7 +291,7 @@ const Header = (props) => {
         // className="morne"
         onClick={() => setDrawerIsOpen(!drawerIsOpen)}
       >
-        <MenuIcon />
+        <MenuIcon className={classes.drawerIcon} />
       </IconButton>
     </>
   );
