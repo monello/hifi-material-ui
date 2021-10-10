@@ -345,13 +345,13 @@ const Header = (props) => {
             component={Link}
             to="/estimate"
             selected={activeTab === 5}
-            className={{
+            classes={{
               root: classes.drawerItemEstimate,
               selected: classes.drawerItemSelected,
             }}
           >
             <ListItemText
-              classses={classes.drawerItem}
+              className={classes.drawerItem}
               sx={{
                 ...theme.typography.estimate,
                 color: theme.palette.common.black,
