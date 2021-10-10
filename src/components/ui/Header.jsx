@@ -287,7 +287,7 @@ const Header = (props) => {
         onClose={() => setDrawerIsOpen(false)}
         onOpen={() => setDrawerIsOpen(true)}
       >
-        <List>
+        <List disablePadding>
           <ListItem component={Link} to="/">
             <ListItemText disableTypography>Home</ListItemText>
           </ListItem>
