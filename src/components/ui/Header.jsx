@@ -22,8 +22,9 @@ import logo from "../../assets/logo.svg";
 
 const useStyles = makeStyles({
   drawerIconContainer: {
+    marginLeft: "auto !important",
     "&:hover": {
-      backgroundColor: "transparent",
+      backgroundColor: "transparent !important",
     },
   },
 });
