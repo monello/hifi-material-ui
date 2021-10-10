@@ -26,6 +26,9 @@ import logo from "../../assets/logo.svg";
 import theme from "./Theme";
 
 const useStyles = makeStyles({
+  appbar: {
+    zIndex: theme.zIndex.modal + 1 + " !important",
+  },
   drawer: {
     backgroundColor: theme.palette.common.blue + " !important",
   },
@@ -379,7 +382,7 @@ const Header = (props) => {
   return (
     <>
       <ElevationScroll>
-        <AppBar position="fixed">
+        <AppBar position="fixed" className={classes.appbar}>
           <Toolbar disableGutters>
             <Button
               component={Link}
