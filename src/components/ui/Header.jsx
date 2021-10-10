@@ -288,19 +288,49 @@ const Header = (props) => {
         onOpen={() => setDrawerIsOpen(true)}
       >
         <List disablePadding>
-          <ListItem divider button component={Link} to="/">
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/"
+          >
             <ListItemText disableTypography>Home</ListItemText>
           </ListItem>
-          <ListItem divider button component={Link} to="/services">
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/services"
+          >
             <ListItemText disableTypography>Services</ListItemText>
           </ListItem>
-          <ListItem divider button component={Link} to="/revolution">
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/revolution"
+          >
             <ListItemText disableTypography>The Revolution</ListItemText>
           </ListItem>
-          <ListItem divider button component={Link} to="/contact">
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/contact"
+          >
             <ListItemText disableTypography>Contact</ListItemText>
           </ListItem>
-          <ListItem divider button component={Link} to="/about">
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/about"
+          >
             <ListItemText disableTypography>About</ListItemText>
           </ListItem>
         </List>
