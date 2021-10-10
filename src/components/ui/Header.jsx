@@ -311,66 +311,90 @@ const Header = (props) => {
       >
         <List disablePadding>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(0);
+            }}
             divider
             button
             component={Link}
             to="/"
+            selected={activeTab === 0}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               Home
             </ListItemText>
           </ListItem>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(1);
+            }}
             divider
             button
             component={Link}
             to="/services"
+            selected={activeTab === 1}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               Services
             </ListItemText>
           </ListItem>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(2);
+            }}
             divider
             button
             component={Link}
             to="/revolution"
+            selected={activeTab === 2}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               The Revolution
             </ListItemText>
           </ListItem>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(3);
+            }}
             divider
             button
             component={Link}
             to="/contact"
+            selected={activeTab === 3}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               Contact
             </ListItemText>
           </ListItem>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(4);
+            }}
             divider
             button
             component={Link}
             to="/about"
+            selected={activeTab === 4}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
               About
             </ListItemText>
           </ListItem>
           <ListItem
-            onClick={() => setDrawerIsOpen(false)}
+            onClick={() => {
+              setDrawerIsOpen(false);
+              setActiveTab(5);
+            }}
             divider
             button
             component={Link}
             to="/estimate"
+            selected={activeTab === 5}
             className={classes.drawerItemEstimate}
           >
             <ListItemText
