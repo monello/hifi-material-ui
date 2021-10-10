@@ -271,6 +271,7 @@ const Header = (props) => {
         }}
         elevation={0}
         keepMounted
+        style={{ zIndex: 1302 }}
       >
         {menuOptions.map((menuItem, index) => (
           <MenuItem
