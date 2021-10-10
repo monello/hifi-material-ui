@@ -161,80 +161,55 @@ const Header = (props) => {
   };
 
   const menuOptions = [
-    { name: "Custom Software Developement", link: "/customsoftware" },
-    { name: "Mobile Apps Development", link: "/mobileapps" },
-    { name: "Websites Development", link: "/websites" },
+    {
+      name: "Custom Software Developement",
+      link: "/customsoftware",
+      activeIndex: 1, // index of the parent menu item (Services)
+      selectedIndex: 0, // index of this option in the Services dropdown menu
+    },
+    {
+      name: "Mobile Apps Development",
+      link: "/mobileapps",
+      activeIndex: 1,
+      selectedIndex: 1,
+    },
+    {
+      name: "Websites Development",
+      link: "/websites",
+      activeIndex: 1,
+      selectedIndex: 2,
+    },
   ];
 
   const routes = [
-    { name: "Home", link: "/" },
-    { name: "Services", link: "/services" },
-    { name: "The Revolution", link: "/revolution" },
-    { name: "About Us", link: "/about" },
-    { name: "Contact Us", link: "/contact" },
+    { name: "Home", link: "/", activeIndex: 0 },
+    { name: "Services", link: "/services", activeIndex: 1 },
+    { name: "The Revolution", link: "/revolution", activeIndex: 2 },
+    { name: "About Us", link: "/about", activeIndex: 3 },
+    { name: "Contact Us", link: "/contact", activeIndex: 4 },
   ];
 
   useEffect(() => {
-    console.log([...menuOptions, ...routes]);
-    // [...menuOptions, ...routes].forEach(route => {
-
-    // });
     // Instructor's comment: If we are trying to access just the '/' Home-page route and we have have not already set the correct value (activeTab)
     // then we we will call setActiveTab() to set with '0' to set the correct active Tab
-    switch (window.location.pathname) {
-      case "/":
-        if (activeTab !== 0) {
-          setActiveTab(0);
-        }
-        break;
-      case "/services":
-        if (activeTab !== 1) {
-          setActiveTab(1);
-        }
-        break;
-      case "/customsoftware":
-        if (activeTab !== 1) {
-          setActiveTab(1);
-          setSelectedIndex(0);
-        }
-        break;
-      case "/mobileapps":
-        if (activeTab !== 1) {
-          setActiveTab(1);
-          setSelectedIndex(1);
-        }
-        break;
-      case "/websites":
-        if (activeTab !== 1) {
-          setActiveTab(1);
-          setSelectedIndex(2);
-        }
-        break;
-      case "/revolution":
-        if (activeTab !== 2) {
-          setActiveTab(2);
-        }
-        break;
-      case "/about":
-        if (activeTab !== 3) {
-          setActiveTab(3);
-        }
-        break;
-      case "/contact":
-        if (activeTab !== 4) {
-          setActiveTab(4);
-        }
-        break;
-      case "/estimate":
-        if (activeTab !== 5) {
-          setActiveTab(5);
-        }
-        break;
-      default:
-        break;
-    }
-    console.log("ACTIVE TAB:", activeTab);
-  }, [activeTab]);
+    [...menuOptions, ...routes].forEach((route) => {
+      switch (window.location.pathname) {
+        case `${route.link}`:
+          // if the activeTab (as set by the onClick events) does not match the activeIndex (active parent menu)
+          if (activeTab !== route.activeIndex) {
+            setActiveTab(route.activeIndex);
+            // if this has a selectedIndex, then we know it's a sub-menu item of the Services dropdown menu
+            // if the index of this item, does not match the current selectedIndex (as set by the onClick events)
+            if (route.selectedIndex && route.selectedIndex !== selectedIndex) {
+              setSelectedIndex(route.selectedIndex);
+            }
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  }, [activeTab, selectedIndex, menuOptions, routes]);
 
   const tabs = (
     <>
