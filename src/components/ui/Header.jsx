@@ -358,6 +358,17 @@ const Header = (props) => {
               About
             </ListItemText>
           </ListItem>
+          <ListItem
+            onClick={() => setDrawerIsOpen(false)}
+            divider
+            button
+            component={Link}
+            to="/estimate"
+          >
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Free Estimate
+            </ListItemText>
+          </ListItem>
         </List>
       </SwipeableDrawer>
       <IconButton
