@@ -29,6 +29,10 @@ const useStyles = makeStyles({
   drawer: {
     backgroundColor: theme.palette.common.blue + " !important",
   },
+  drawerItem: {
+    ...theme.typography.tab,
+    color: "white",
+  },
   drawerIconContainer: {
     marginLeft: "auto !important",
     "&:hover": {
@@ -295,7 +299,6 @@ const Header = (props) => {
         PaperProps={{
           sx: {
             backgroundColor: theme.palette.common.blue,
-            color: theme.palette.primary.contrastText,
           },
         }}
       >
@@ -307,7 +310,9 @@ const Header = (props) => {
             component={Link}
             to="/"
           >
-            <ListItemText disableTypography>Home</ListItemText>
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Home
+            </ListItemText>
           </ListItem>
           <ListItem
             onClick={() => setDrawerIsOpen(false)}
@@ -316,7 +321,9 @@ const Header = (props) => {
             component={Link}
             to="/services"
           >
-            <ListItemText disableTypography>Services</ListItemText>
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Services
+            </ListItemText>
           </ListItem>
           <ListItem
             onClick={() => setDrawerIsOpen(false)}
@@ -325,7 +332,9 @@ const Header = (props) => {
             component={Link}
             to="/revolution"
           >
-            <ListItemText disableTypography>The Revolution</ListItemText>
+            <ListItemText className={classes.drawerItem} disableTypography>
+              The Revolution
+            </ListItemText>
           </ListItem>
           <ListItem
             onClick={() => setDrawerIsOpen(false)}
@@ -334,7 +343,9 @@ const Header = (props) => {
             component={Link}
             to="/contact"
           >
-            <ListItemText disableTypography>Contact</ListItemText>
+            <ListItemText className={classes.drawerItem} disableTypography>
+              Contact
+            </ListItemText>
           </ListItem>
           <ListItem
             onClick={() => setDrawerIsOpen(false)}
@@ -343,7 +354,9 @@ const Header = (props) => {
             component={Link}
             to="/about"
           >
-            <ListItemText disableTypography>About</ListItemText>
+            <ListItemText className={classes.drawerItem} disableTypography>
+              About
+            </ListItemText>
           </ListItem>
         </List>
       </SwipeableDrawer>
