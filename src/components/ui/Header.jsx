@@ -183,7 +183,14 @@ const Header = (props) => {
 
   const routes = [
     { name: "Home", link: "/", activeIndex: 0 },
-    { name: "Services", link: "/services", activeIndex: 1 },
+    {
+      name: "Services",
+      link: "/services",
+      activeIndex: 1,
+      ariaOwns: menuAnchorEl ? "simple-menu" : undefined,
+      ariaPopup: menuAnchorEl ? "true" : undefined,
+      onMouseOver: (event) => handleMenuCLick(event),
+    },
     { name: "The Revolution", link: "/revolution", activeIndex: 2 },
     { name: "About Us", link: "/about", activeIndex: 3 },
     { name: "Contact Us", link: "/contact", activeIndex: 4 },
@@ -220,18 +227,16 @@ const Header = (props) => {
         TabIndicatorProps={{ style: { backgroundColor: "#fff" } }}
         textColor="inherit"
       >
-        <StyledTab component={Link} to="/" label="Home" />
-        <StyledTab
-          component={Link}
-          to="/services"
-          label="Services"
-          aria-owns={menuAnchorEl ? "simple-menu" : undefined}
-          aria-haspopup={menuAnchorEl ? "true" : undefined}
-          onMouseOver={(event) => handleMenuCLick(event)}
-        />
-        <StyledTab component={Link} to="/revolution" label="The Revolution" />
-        <StyledTab component={Link} to="/about" label="About Us" />
-        <StyledTab component={Link} to="/contact" label="Contact Us" />
+        {routes.map((route, index) => (
+          <StyledTab
+            component={Link}
+            to={route.link}
+            label={route.name}
+            aria-owns={route.ariaOwns}
+            aria-haspopup={route.ariaPopup}
+            onMouseOver={route.onMouseOver}
+          />
+        ))}
       </StyledTabs>
       <Button
         variant="contained"
@@ -303,116 +308,30 @@ const Header = (props) => {
         }}
       >
         <List disablePadding>
-          <ListItem
-            onClick={() => {
-              setDrawerIsOpen(false);
-              setActiveTab(0);
-            }}
-            divider
-            button
-            component={Link}
-            to="/"
-            selected={activeTab === 0}
-          >
-            <ListItemText
-              className={
-                activeTab === 0
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
-              disableTypography
+          {routes.map((route) => (
+            <ListItem
+              divider
+              button
+              component={Link}
+              to={route.link}
+              selected={activeTab === route.activeIndex}
+              onClick={() => {
+                setDrawerIsOpen(false);
+                setActiveTab(route.activeIndex);
+              }}
             >
-              Home
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawerIsOpen(false);
-              setActiveTab(1);
-            }}
-            divider
-            button
-            component={Link}
-            to="/services"
-            selected={activeTab === 1}
-          >
-            <ListItemText
-              className={
-                activeTab === 1
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Services
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawerIsOpen(false);
-              setActiveTab(2);
-            }}
-            divider
-            button
-            component={Link}
-            to="/revolution"
-            selected={activeTab === 2}
-          >
-            <ListItemText
-              className={
-                activeTab === 2
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              The Revolution
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawerIsOpen(false);
-              setActiveTab(3);
-            }}
-            divider
-            button
-            component={Link}
-            to="/about"
-            selected={activeTab === 3}
-          >
-            <ListItemText
-              className={
-                activeTab === 3
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              About
-            </ListItemText>
-          </ListItem>
-          <ListItem
-            onClick={() => {
-              setDrawerIsOpen(false);
-              setActiveTab(4);
-            }}
-            divider
-            button
-            component={Link}
-            to="/contact"
-            selected={activeTab === 4}
-          >
-            <ListItemText
-              className={
-                activeTab === 4
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
-              disableTypography
-            >
-              Contact
-            </ListItemText>
-          </ListItem>
+              <ListItemText
+                className={
+                  activeTab === route.activeIndex
+                    ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
+                    : classes.drawerItem
+                }
+                disableTypography
+              >
+                {route.name}
+              </ListItemText>
+            </ListItem>
+          ))}
           <ListItem
             onClick={() => {
               setDrawerIsOpen(false);
