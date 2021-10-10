@@ -32,9 +32,13 @@ const useStyles = makeStyles({
   drawerItem: {
     ...theme.typography.tab,
     color: "white",
+    fontWeight: "400 !important",
   },
   drawerItemEstimate: {
     backgroundColor: theme.palette.common.orange + " !important",
+    "&:hover": {
+      backgroundColor: "transparent !important",
+    },
   },
   drawerIconContainer: {
     marginLeft: "auto !important",
@@ -369,7 +373,17 @@ const Header = (props) => {
             to="/estimate"
             className={classes.drawerItemEstimate}
           >
-            <ListItemText className={classes.drawerItem} disableTypography>
+            <ListItemText
+              className={classes.drawerItem}
+              sx={{
+                ...theme.typography.estimate,
+                color: theme.palette.common.black,
+                "&:hover": {
+                  color: theme.palette.common.white + " !important",
+                },
+              }}
+              disableTypography
+            >
               Free Estimate
             </ListItemText>
           </ListItem>
