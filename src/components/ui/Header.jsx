@@ -34,7 +34,7 @@ const useStyles = makeStyles({
     color: "white",
   },
   drawerItemEstimate: {
-    backgroundColor: theme.palette.common.orange,
+    backgroundColor: theme.palette.common.orange + " !important",
   },
   drawerIconContainer: {
     marginLeft: "auto !important",
@@ -367,11 +367,9 @@ const Header = (props) => {
             button
             component={Link}
             to="/estimate"
+            className={classes.drawerItemEstimate}
           >
-            <ListItemText
-              className={[classes.drawerItem, classes.drawerItemEstimate]}
-              disableTypography
-            >
+            <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
           </ListItem>
