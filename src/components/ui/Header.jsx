@@ -30,6 +30,7 @@ const useStyles = makeStyles({
   drawerIcon: {
     height: "50px !important",
     width: "50px !important",
+    color: "white !important",
   },
 });
 
