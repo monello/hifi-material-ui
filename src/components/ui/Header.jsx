@@ -39,7 +39,9 @@ const useStyles = makeStyles({
     opacity: 0.7,
   },
   drawerItemSelected: {
-    opacity: 1,
+    "& .MuiListItemText-root": {
+      opacity: 1,
+    },
     fontWeight: 700,
   },
   drawerItemEstimate: {
@@ -322,19 +324,13 @@ const Header = (props) => {
               component={Link}
               to={route.link}
               selected={activeTab === route.activeIndex}
+              classes={{ selected: classes.drawerItemSelected }}
               onClick={() => {
                 setDrawerIsOpen(false);
                 setActiveTab(route.activeIndex);
               }}
             >
-              <ListItemText
-                className={
-                  activeTab === route.activeIndex
-                    ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                    : classes.drawerItem
-                }
-                disableTypography
-              >
+              <ListItemText className={classes.drawerItem} disableTypography>
                 {route.name}
               </ListItemText>
             </ListItem>
@@ -349,14 +345,13 @@ const Header = (props) => {
             component={Link}
             to="/estimate"
             selected={activeTab === 5}
-            className={classes.drawerItemEstimate}
+            className={{
+              root: classes.drawerItemEstimate,
+              selected: classes.drawerItemSelected,
+            }}
           >
             <ListItemText
-              className={
-                activeTab === 5
-                  ? [classes.drawerItem, classes.drawerItemSelected].join(" ")
-                  : classes.drawerItem
-              }
+              classses={classes.drawerItem}
               sx={{
                 ...theme.typography.estimate,
                 color: theme.palette.common.black,
