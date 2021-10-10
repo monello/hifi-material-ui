@@ -312,6 +312,7 @@ const Header = (props) => {
           },
         }}
       >
+        <ToolbarSpacer />
         <List disablePadding>
           {routes.map((route) => (
             <ListItem
