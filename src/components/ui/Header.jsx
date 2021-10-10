@@ -264,6 +264,7 @@ const Header = (props) => {
           },
         }}
         elevation={0}
+        keepMounted
       >
         {menuOptions.map((menuItem, index) => (
           <MenuItem
