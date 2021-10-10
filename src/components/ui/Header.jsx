@@ -12,14 +12,21 @@ import {
   MenuItem,
   useMediaQuery,
   SwipeableDrawer,
+  IconButton,
 } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
-
-import { IconButton } from "@mui/material";
-
+import { makeStyles } from "@mui/styles";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
 import logo from "../../assets/logo.svg";
+
+const useStyles = makeStyles({
+  drawerIconContainer: {
+    "&:hover": {
+      backgroundColor: "transparent",
+    },
+  },
+});
 
 /**
  * ## STYLED COMPONENTS
@@ -95,6 +102,8 @@ const Header = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const theme = useTheme();
+  const classes = useStyles(props);
+
   const iOS =
     typeof navigator !== "undefined" &&
     /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -271,7 +280,12 @@ const Header = (props) => {
       >
         Example Drawer
       </SwipeableDrawer>
-      <IconButton onClick={() => setDrawerIsOpen(!drawerIsOpen)}>
+      <IconButton
+        disableRipple
+        className={classes.drawerIconContainer}
+        // className="morne"
+        onClick={() => setDrawerIsOpen(!drawerIsOpen)}
+      >
         <MenuIcon />
       </IconButton>
     </>
