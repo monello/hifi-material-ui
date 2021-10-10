@@ -194,7 +194,7 @@ const Header = (props) => {
     // then we we will call setActiveTab() to set with '0' to set the correct active Tab
     [...menuOptions, ...routes].forEach((route) => {
       switch (window.location.pathname) {
-        case `${route.link}`:
+        case route.link:
           // if the activeTab (as set by the onClick events) does not match the activeIndex (active parent menu)
           if (activeTab !== route.activeIndex) {
             setActiveTab(route.activeIndex);
