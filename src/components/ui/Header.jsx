@@ -229,6 +229,7 @@ const Header = (props) => {
       >
         {routes.map((route, index) => (
           <StyledTab
+            key={`${route}${index}`}
             component={Link}
             to={route.link}
             label={route.name}
@@ -311,6 +312,7 @@ const Header = (props) => {
         <List disablePadding>
           {routes.map((route) => (
             <ListItem
+              key={`${route}${route.activeIndex}`}
               divider
               button
               component={Link}
