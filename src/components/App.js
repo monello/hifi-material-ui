@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "./ui/Header";
+import Footer from './ui/Footer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { ThemeProvider } from '@mui/material/styles';
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/contact" component={() => <div>Contact Us Page</div>}></Route>
           <Route exact path="/estimate" component={() => <div>Free Estimates Page</div>}></Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );
