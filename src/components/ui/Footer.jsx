@@ -40,7 +40,6 @@ const Footer = (props) => {
       <Grid
         container
         className={classes.mainContainer}
-        direction="row"
         justifyContent="center"
         alignItems="flex-start"
       >
