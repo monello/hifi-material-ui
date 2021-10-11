@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   adornement: {
     width: "25em",
     verticalAlign: "bottom",
+    [theme.breakpoints.down("lg")]: {
+      width: "21em",
+    },
   },
 }));
 
