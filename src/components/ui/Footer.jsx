@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.blue,
     width: "100%",
   },
+  adornement: {
+    width: "25em",
+  },
 }));
 
 const Footer = (props) => {
@@ -15,7 +18,11 @@ const Footer = (props) => {
 
   return (
     <footer className={classes.footer}>
-      <img alt="black decorative slash" src={footerAdornment} />
+      <img
+        alt="black decorative slash"
+        src={footerAdornment}
+        className={classes.adornement}
+      />
     </footer>
   );
 };
