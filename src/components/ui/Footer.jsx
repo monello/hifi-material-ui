@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("lg")]: {
       width: "21em",
     },
+    [theme.breakpoints.down("sm")]: {
+      width: "15em",
+    },
   },
 }));
 
