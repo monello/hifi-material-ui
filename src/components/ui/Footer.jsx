@@ -43,8 +43,58 @@ const Footer = (props) => {
         justifyContent="center"
         alignItems="flex-start"
       >
-        <Grid item className={classes.link}>
-          Hone
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.link}>
+              Home
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.link}>
+              Services
+            </Grid>
+            <Grid item className={classes.link}>
+              Custom Software Development
+            </Grid>
+            <Grid item className={classes.link}>
+              Mobile Apps Development
+            </Grid>
+            <Grid item className={classes.link}>
+              Websites Development
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.link}>
+              The Revolution
+            </Grid>
+            <Grid item className={classes.link}>
+              Vision
+            </Grid>
+            <Grid item className={classes.link}>
+              Technology
+            </Grid>
+            <Grid item className={classes.link}>
+              Process
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.link}>
+              About Us
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item className={classes.link}>
+              Contact Us
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
       <img
