@@ -37,7 +37,13 @@ const Footer = (props) => {
 
   return (
     <footer className={classes.footer}>
-      <Grid container className={classes.mainContainer}>
+      <Grid
+        container
+        className={classes.mainContainer}
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
+      >
         <Grid item className={classes.link}>
           Hone
         </Grid>
