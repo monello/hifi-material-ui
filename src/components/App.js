@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={() => <div>Home Page</div>}></Route>
+          <Route exact path="/" component={() => <div style={{ height: "900px" }}>Home Page<p>Foo</p></div>}></Route>
           <Route exact path="/services" component={() => <div>Services Page</div>}></Route>
           <Route exact path="/customsoftware" component={() => <div>Custom Software Page</div>}></Route>
           <Route exact path="/mobileapps" component={() => <div>Mobile Apps Page</div>}></Route>
