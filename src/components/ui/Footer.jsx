@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.75rem",
     fontWeight: "bold",
   },
+  gridItem: {
+    margin: "3em !important",
+  },
 }));
 
 const Footer = (props) => {
@@ -43,14 +46,14 @@ const Footer = (props) => {
         justifyContent="center"
         alignItems="flex-start"
       >
-        <Grid item>
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Home
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Services
@@ -66,7 +69,7 @@ const Footer = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               The Revolution
@@ -82,14 +85,14 @@ const Footer = (props) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               About Us
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Contact Us
