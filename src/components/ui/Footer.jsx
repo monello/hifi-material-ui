@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { makeStyles } from "@mui/styles";
 import { Grid } from "@mui/material";
 
@@ -29,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Arial",
     fontSize: "0.75rem",
     fontWeight: "bold",
+    textDecoration: "none",
   },
   gridItem: {
     margin: "3em !important",
@@ -48,53 +51,83 @@ const Footer = (props) => {
       >
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/">
               Home
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/services">
               Services
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/customsoftware"
+            >
               Custom Software Development
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/mobileapps"
+            >
               Mobile Apps Development
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/websites">
               Websites Development
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/revolution"
+            >
               The Revolution
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/revolution"
+            >
               Vision
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/revolution"
+            >
               Technology
             </Grid>
-            <Grid item className={classes.link}>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/revolution"
+            >
               Process
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/about">
               About Us
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/contact">
               Contact Us
             </Grid>
           </Grid>
