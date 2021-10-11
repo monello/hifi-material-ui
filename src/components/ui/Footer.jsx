@@ -44,14 +44,14 @@ const Footer = (props) => {
         alignItems="flex-start"
       >
         <Grid item>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Home
             </Grid>
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Services
             </Grid>
@@ -67,7 +67,7 @@ const Footer = (props) => {
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               The Revolution
             </Grid>
@@ -83,14 +83,14 @@ const Footer = (props) => {
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               About Us
             </Grid>
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column">
+          <Grid container direction="column" spacing={2}>
             <Grid item className={classes.link}>
               Contact Us
             </Grid>
