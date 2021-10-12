@@ -50,6 +50,7 @@ const Footer = (props) => {
         className={classes.mainContainer}
         justifyContent="center"
         alignItems="flex-start"
+        sx={{ display: { lg: "flex", xs: "none" } }}
       >
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
