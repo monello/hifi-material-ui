@@ -48,7 +48,12 @@ function App() {
             component={TempFreeEstimatestPage}
           ></Route>
         </Switch>
-        <Footer />
+        <Footer
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
       </BrowserRouter>
     </ThemeProvider>
   );

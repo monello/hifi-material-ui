@@ -39,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Footer = (props) => {
+  const { activeTab, setActiveTab } = props;
+  const { selectedIndex, setSelectedIndex } = props;
+
   const classes = useStyles();
 
   return (
@@ -51,14 +54,26 @@ const Footer = (props) => {
       >
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link} component={Link} to="/">
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/"
+              onClick={() => setActiveTab(0)}
+            >
               Home
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link} component={Link} to="/services">
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/services"
+              onClick={() => setActiveTab(1)}
+            >
               Services
             </Grid>
             <Grid
@@ -66,6 +81,10 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/customsoftware"
+              onClick={() => {
+                setActiveTab(1);
+                setSelectedIndex(0);
+              }}
             >
               Custom Software Development
             </Grid>
@@ -74,10 +93,23 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/mobileapps"
+              onClick={() => {
+                setActiveTab(1);
+                setSelectedIndex(1);
+              }}
             >
               Mobile Apps Development
             </Grid>
-            <Grid item className={classes.link} component={Link} to="/websites">
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/websites"
+              onClick={() => {
+                setActiveTab(1);
+                setSelectedIndex(2);
+              }}
+            >
               Websites Development
             </Grid>
           </Grid>
@@ -89,6 +121,7 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/revolution"
+              onClick={() => setActiveTab(2)}
             >
               The Revolution
             </Grid>
@@ -97,6 +130,7 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/revolution"
+              onClick={() => setActiveTab(2)}
             >
               Vision
             </Grid>
@@ -105,6 +139,7 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/revolution"
+              onClick={() => setActiveTab(2)}
             >
               Technology
             </Grid>
@@ -113,6 +148,7 @@ const Footer = (props) => {
               className={classes.link}
               component={Link}
               to="/revolution"
+              onClick={() => setActiveTab(2)}
             >
               Process
             </Grid>
@@ -120,14 +156,26 @@ const Footer = (props) => {
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link} component={Link} to="/about">
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/about"
+              onClick={() => setActiveTab(3)}
+            >
               About Us
             </Grid>
           </Grid>
         </Grid>
         <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link} component={Link} to="/contact">
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/contact"
+              onClick={() => setActiveTab(4)}
+            >
               Contact Us
             </Grid>
           </Grid>
