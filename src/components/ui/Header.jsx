@@ -130,10 +130,10 @@ ElevationScroll.propTypes = {
 };
 
 const Header = (props) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const { activeTab, setActiveTab } = props;
+  const { selectedIndex, setSelectedIndex } = props;
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
 
   const theme = useTheme();

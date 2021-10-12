@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -9,10 +9,18 @@ import theme from "./ui/Theme";
 import { LoremIpsum } from "react-lorem-ipsum";
 
 function App() {
+  const [activeTab, setActiveTab] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header />
+        <Header
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
         <Switch>
           <Route exact path="/" component={TempHomePage}></Route>
           <Route exact path="/services" component={TempServicesPage}></Route>
