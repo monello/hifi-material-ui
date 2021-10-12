@@ -221,7 +221,14 @@ const Header = (props) => {
           break;
       }
     });
-  }, [activeTab, selectedIndex, menuOptions, routes]);
+  }, [
+    activeTab,
+    setActiveTab,
+    selectedIndex,
+    setSelectedIndex,
+    menuOptions,
+    routes,
+  ]);
 
   const tabs = (
     <>
