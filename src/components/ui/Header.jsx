@@ -247,7 +247,7 @@ const Header = (props) => {
       <Button
         component={Link}
         to="/estimate"
-        onClick={() => setActiveTab(5)}
+        onClick={() => setActiveTab(null)}
         variant="contained"
         color="secondary"
         sx={{
