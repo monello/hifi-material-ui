@@ -245,6 +245,9 @@ const Header = (props) => {
         ))}
       </StyledTabs>
       <Button
+        component={Link}
+        to="/estimate"
+        onClick={() => setActiveTab(4)}
         variant="contained"
         color="secondary"
         sx={{
