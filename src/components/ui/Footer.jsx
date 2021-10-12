@@ -39,8 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Footer = (props) => {
-  const { activeTab, setActiveTab } = props;
-  const { selectedIndex, setSelectedIndex } = props;
+  const { setActiveTab, setSelectedIndex } = props;
 
   const classes = useStyles();
 
