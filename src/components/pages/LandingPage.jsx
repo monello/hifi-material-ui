@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <Grid container direction="column">
       <Grid item>
-        <Grid container direction="row">
+        <Grid container direction="row" justifyContent="flex-end">
           <Grid item>
             <div>
               Bringing West Coast Technology
