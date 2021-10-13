@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Button } from "@mui/material";
-import ButtonArrow from "../ui/ButtonArrow";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import cpuImage from "../../assets/Landing-Page-CPU.png";
 
@@ -19,9 +19,11 @@ const LandingPage = () => {
                 <Button variant="contained">Free Estimate</Button>
               </Grid>
               <Grid item>
-                <Button variant="outlined">
+                <Button
+                  variant="outlined"
+                  endIcon={<ArrowForwardIcon color="error" />}
+                >
                   Learn More
-                  <ButtonArrow width={15} height={15} fill="red"></ButtonArrow>
                 </Button>
               </Grid>
             </Grid>
