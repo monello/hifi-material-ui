@@ -15,7 +15,7 @@ const LandingPage = () => {
           alignItems="center"
         >
           <Grid item>
-            <Typography align="center">
+            <Typography variant="h2" align="center">
               Bringing West Coast Technology
               <br /> to the Midwest
             </Typography>
