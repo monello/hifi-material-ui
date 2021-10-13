@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import cpuImage from "../../assets/Landing-Page-CPU.png";
@@ -15,10 +15,10 @@ const LandingPage = () => {
           alignItems="center"
         >
           <Grid item>
-            <div>
+            <Typography align="center">
               Bringing West Coast Technology
               <br /> to the Midwest
-            </div>
+            </Typography>
             <Grid container>
               <Grid item>
                 <Button variant="contained">Free Estimate</Button>
