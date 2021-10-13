@@ -6,6 +6,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./ui/Theme";
 
+// Pages
+import LandingPage from "./pages/LandingPage";
+
 import { LoremIpsum } from "react-lorem-ipsum";
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
           setSelectedIndex={setSelectedIndex}
         />
         <Switch>
-          <Route exact path="/" component={TempHomePage}></Route>
+          <Route exact path="/" component={LandingPage}></Route>
           <Route exact path="/services" component={TempServicesPage}></Route>
           <Route
             exact
@@ -58,13 +61,6 @@ function App() {
     </ThemeProvider>
   );
 }
-
-const TempHomePage = () => (
-  <div>
-    <h1>Home Page</h1>
-    <LoremIpsum p={6} avgWordsPerSentence={10} avgSentencesPerParagraph={10} />
-  </div>
-);
 
 const TempServicesPage = () => (
   <div>
