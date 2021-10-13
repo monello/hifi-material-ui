@@ -1,4 +1,4 @@
-# Couse Commit Log
+# Course Commit Log
 
 This repo is a step-by-step commit log of all the changes the Lectuter makes in the Udemy course [Implement High Fedility Designs with Material-UI and ReactJS](https://www.udemy.com/share/102FSw3@HhMnIjr0GPsnedp8ZCgMxFK_v8akZ6RwCgLIR_SAkDe8EAqqztv2J1CFlSYackny/)
 
@@ -18,8 +18,12 @@ The Nav-links just make it much easier to move between commits, in-order, instea
 
 If there is a better way to navigate between commits, please ... please let me know so I can spend that time a bit better 😄
 
-If you dicovered this commit log by chance I hope it helps, as it goes along with that course. 
+If you dicovered this commit log by chance I hope it helps, as it goes along with that course.
 
 ## The first commit is the last commit in the log
 
 Here is a handy link to the [First Commit](https://github.com/monello/hifi-material-ui/commit/95af34f1197892e8516804fbfafb607d950e61fd), that is obviously the last commit on the last page of the log so a bit painful to get to otherwise
+
+### Useful Commits
+
+- [Deploying: Getting redirects to work](https://github.com/monello/hifi-material-ui/commit/984ef48f0b62faec037acfe972047b566d10eb05)
